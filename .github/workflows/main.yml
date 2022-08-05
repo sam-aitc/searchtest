@@ -1,0 +1,17 @@
+name: Docker image buildx and push
+on: [push]
+
+jobs:
+  GCC11_UBUNTU2204_DEMO001:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prepare libmu
+        uses: actions/checkout@v3
+        with:
+          repository: mattbudish/libmu
+          path: libmu
+
+      - name: list
+        uses: Rishabh510/Path-lister-action@master
+        with:
+          path: .
